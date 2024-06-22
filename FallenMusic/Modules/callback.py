@@ -102,7 +102,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_on(query.message.chat.id)
         await pytgcalls.resume_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"➻ sᴛʀᴇᴀᴍ ʀᴇsᴜᴍᴇᴅ 💫\n│ \n└ʙʏ : {query.from_user.mention} 🥀",
+            text=f"➻ sᴛʀᴇᴀᴍ ʀᴇsᴜᴍᴇᴅ \n│ \n└ʙʏ : {query.from_user.mention} ",
             reply_markup=close_key,
         )
 
@@ -114,7 +114,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_off(query.message.chat.id)
         await pytgcalls.pause_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"➻ sᴛʀᴇᴀᴍ ᴩᴀᴜsᴇᴅ 🥺\n│ \n└ʙʏ : {query.from_user.mention} 🥀",
+            text=f"➻ sᴛʀᴇᴀᴍ ᴩᴀᴜsᴇ \n│ \n└ʙʏ : {query.from_user.mention} ",
             reply_markup=close_key,
         )
 
@@ -125,7 +125,7 @@ async def admin_cbs(_, query: CallbackQuery):
         except:
             pass
         await query.message.reply_text(
-            text=f"➻ sᴛʀᴇᴀᴍ ᴇɴᴅᴇᴅ/sᴛᴏᴩᴩᴇᴅ ❄\n│ \n└ʙʏ : {query.from_user.mention} 🥀",
+            text=f"➻ sᴛʀᴇᴀᴍ ʙᴇʀʜᴇɴᴛɪ \n│ \n└ʙʏ : {query.from_user.mention} ",
             reply_markup=close_key,
         )
         await query.message.delete()
@@ -137,7 +137,7 @@ async def admin_cbs(_, query: CallbackQuery):
                 await _clear_(query.message.chat.id)
                 await pytgcalls.leave_group_call(query.message.chat.id)
                 await query.message.reply_text(
-                    text=f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {query.from_user.mention} 🥀\n\n**» ɴᴏ ᴍᴏʀᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs ɪɴ** {query.message.chat.title}, **ʟᴇᴀᴠɪɴɢ ᴠɪᴅᴇᴏᴄʜᴀᴛ.**",
+                    text=f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩ \n│ \n└ʙʏ : {query.from_user.mention} \n\n**» ɴᴏ ᴍᴏʀᴇ ǫᴜᴇᴜᴇᴅ ᴛʀᴀᴄᴋs ɪɴ** {query.message.chat.title}, **ʟᴇᴀᴠɪɴɢ ᴠɪᴅᴇᴏᴄʜᴀᴛ.**",
                     reply_markup=close_key,
                 )
                 return await query.message.delete()
@@ -165,7 +165,7 @@ async def admin_cbs(_, query: CallbackQuery):
 
             img = await gen_thumb(videoid, user_id)
             await query.edit_message_text(
-                text=f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩᴩᴇᴅ 🥺\n│ \n└ʙʏ : {query.from_user.mention} 🥀",
+                text=f"➻ sᴛʀᴇᴀᴍ sᴋɪᴩ \n│ \n└ʙʏ : {query.from_user.mention} ",
                 reply_markup=close_key,
             )
             return await query.message.reply_photo(
@@ -186,7 +186,7 @@ async def unban_ass(_, CallbackQuery):
             await app.unban_chat_member(int(chat_id), ASS_ID)
         except:
             return await CallbackQuery.answer(
-                "» ғᴀɪʟᴇᴅ ᴛᴏ ᴜɴʙᴀɴ ᴀssɪsᴛᴀɴᴛ.",
+                "» ɢᴀɢᴀʟ ᴜɴʙᴀɴ ᴀssɪsᴛᴀɴᴛ.",
                 show_alert=True,
             )
         return await CallbackQuery.edit_message_text(
@@ -194,7 +194,7 @@ async def unban_ass(_, CallbackQuery):
         )
     else:
         return await CallbackQuery.answer(
-            "» ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ᴜɴʙᴀɴ ᴜsᴇʀs ɪɴ ᴛʜɪs ᴄʜᴀᴛ.",
+            "» sᴀʏᴀ ᴛɪᴅᴀᴋ ᴘᴜɴʏᴀ ᴀᴋsᴇs ᴜɴʙᴀɴ ᴅɪ ɢʀᴏᴜᴘ ɪɴɪ.",
             show_alert=True,
         )
 
@@ -208,7 +208,7 @@ async def help_menu(_, query: CallbackQuery):
 
     try:
         await query.edit_message_text(
-            text=f"๏ ʜᴇʏ {query.from_user.first_name}, 🥀\n\nᴘʟᴇᴀsᴇ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴ ʙᴇʟᴏᴡ ғᴏʀ ᴡʜɪᴄʜ ʏᴏᴜ ᴡᴀɴɴᴀ ɢᴇᴛ ʜᴇʟᴘ.",
+            text=f"๏ ʜᴇʏ {query.from_user.first_name}, \n\nsɪʟᴀʜᴋᴀɴ ᴋʟɪᴋ ʙᴜᴛᴛᴏɴ ʜᴇʟᴘ ᴊɪᴋᴀ ɪɴɢɪɴ ᴍᴇʟɪʜᴀᴛ ᴍᴏᴅᴜʟᴇ ʙᴏᴛ ɪɴɪ.",
             reply_markup=InlineKeyboardMarkup(helpmenu),
         )
     except Exception as e:
