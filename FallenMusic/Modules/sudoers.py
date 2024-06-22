@@ -36,31 +36,31 @@ async def sudoadd(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text(
-                "» ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ's ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ ᴜsᴇʀɴᴀᴍᴇ/ᴜsᴇʀ ɪᴅ."
+                "» ʀᴇᴘʟʏ ᴜsᴇʀ ᴀᴛᴀᴜ ʙᴇʀɪᴋᴀɴ ᴜsᴇʀɴᴀᴍᴇ / ᴜsᴇʀ ɪᴅ."
             )
         user = message.text.split(None, 1)[1]
         if "@" in user:
             user = user.replace("@", "")
         user = await app.get_users(user)
         if int(user.id) in SUDOERS:
-            return await message.reply_text(f"» {user.mention} ɪs ᴀʟʀᴇᴀᴅʏ ᴀ sᴜᴅᴏ ᴜsᴇʀ.")
+            return await message.reply_text(f"» {user.mention} sᴜᴅᴀʜ ᴍᴀsᴜᴋ sᴜᴅᴏ ʟɪsᴛ.")
         try:
             SUDOERS.add(int(user.id))
-            await message.reply_text(f"ᴀᴅᴅᴇᴅ {user.mention} ɪɴ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ.")
+            await message.reply_text(f"ʙᴇʀʜᴀsɪʟ {user.mention} ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ sᴜᴅᴏ ʟɪsᴛ.")
         except:
-            return await message.reply_text("ғᴀɪʟᴇᴅ ᴛᴏ ᴀᴅᴅ ᴜsᴇʀ ɪɴ sᴜᴅᴏᴇʀs.")
+            return await message.reply_text("ɢᴀɢᴀʟ ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ sᴜᴅᴏ.")
 
     if message.reply_to_message.from_user.id in SUDOERS:
         return await message.reply_text(
-            f"» {message.reply_to_message.from_user.mention} ɪs ᴀʟʀᴇᴀᴅʏ ᴀ sᴜᴅᴏ ᴜsᴇʀ."
+            f"» {message.reply_to_message.from_user.mention} sᴜᴅᴀʜ ᴍᴀsᴜᴋ sᴜᴅᴏ ʟɪsᴛ."
         )
     try:
         SUDOERS.add(message.reply_to_message.from_user.id)
         await message.reply_text(
-            f"ᴀᴅᴅᴇᴅ {message.reply_to_message.from_user.mention} ɪɴ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ."
+            f"ʙᴇʀʜᴀsɪʟ {message.reply_to_message.from_user.mention} ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ sᴜᴅᴏ ʟɪsᴛ."
         )
     except:
-        return await message.reply_text("ғᴀɪʟᴇᴅ ᴛᴏ ᴀᴅᴅ ᴜsᴇʀ ɪɴ sᴜᴅᴏᴇʀs.")
+        return await message.reply_text("ɢᴀɢᴀʟ ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ sᴜᴅᴏ.")
 
 
 @app.on_message(filters.command(["delsudo", "rmsudo"]) & filters.user(OWNER_ID))
@@ -72,7 +72,7 @@ async def sudodel(_, message: Message):
     if not message.reply_to_message:
         if len(message.command) != 2:
             return await message.reply_text(
-                "» ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴜsᴇʀ's ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ ᴜsᴇʀɴᴀᴍᴇ/ᴜsᴇʀ ɪᴅ."
+                "» ʀᴇᴘʟʏ ᴜsᴇʀ ᴀᴛᴀᴜ ʙᴇʀɪᴋᴀɴ ᴜsᴇʀɴᴀᴍᴇ / ᴜsᴇʀ ɪᴅ."
             )
         user = message.text.split(None, 1)[1]
         if "@" in user:
@@ -80,20 +80,20 @@ async def sudodel(_, message: Message):
         user = await app.get_users(user)
         if int(user.id) not in SUDOERS:
             return await message.reply_text(
-                f"» {user.mention} ɪs ɴᴏᴛ ɪɴ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ."
+                f"» {user.mention} ʙᴜᴋᴀɴ ᴛᴇʀᴍᴀsᴜᴋ sᴜᴅᴏ ʟɪsᴛ."
             )
         try:
             SUDOERS.remove(int(user.id))
             return await message.reply_text(
-                f"» ʀᴇᴍᴏᴠᴇᴅ {user.mention} ғʀᴏᴍ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ."
+                f"» ᴍᴇɴɢʜᴀᴘᴜs {user.mention} ᴅᴀʀɪ ʟɪsᴛ sᴜᴅᴏ."
             )
         except:
-            return await message.reply_text(f"ғᴀɪʟᴇᴅ ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴜsᴇʀ ғʀᴏᴍ sᴜᴅᴏᴇʀs.")
+            return await message.reply_text(f"ɢᴀɢᴀʟ ᴍᴇɴɢʜᴀᴘᴜs sᴜᴅᴏ.")
     else:
         user_id = message.reply_to_message.from_user.id
         if int(user_id) not in SUDOERS:
             return await message.reply_text(
-                f"» {message.reply_to_message.from_user.mention} ɪs ɴᴏᴛ ɪɴ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ."
+                f"» {message.reply_to_message.from_user.mention} ʙᴜᴋᴀɴ ᴛᴇʀᴍᴀsᴜᴋ sᴜᴅᴏ ʟɪsᴛ."
             )
         try:
             SUDOERS.remove(int(user_id))
@@ -101,13 +101,13 @@ async def sudodel(_, message: Message):
                 f"» ʀᴇᴍᴏᴠᴇᴅ {message.reply_to_message.from_user.mention} ғʀᴏᴍ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ."
             )
         except:
-            return await message.reply_text(f"ғᴀɪʟᴇᴅ ᴛᴏ ʀᴇᴍᴏᴠᴇ ᴜsᴇʀ ғʀᴏᴍ sᴜᴅᴏᴇʀs.")
+            return await message.reply_text(f"ɢᴀɢᴀʟ ᴍᴇɴɢʜᴀᴘᴜs ʟɪsᴛ sᴜᴅᴏ.")
 
 
 @app.on_message(filters.command(["sudolist", "sudoers", "sudo"]))
 async def sudoers_list(_, message: Message):
-    hehe = await message.reply_text("» ɢᴇᴛᴛɪɴɢ sᴜᴅᴏ ᴜsᴇʀs ʟɪsᴛ...")
-    text = "<u>🥀 **ᴏᴡɴᴇʀ :**</u>\n"
+    hehe = await message.reply_text("» ᴍᴇɴɢᴀᴍʙɪʟ ʟɪsᴛ sᴜᴅᴏ...")
+    text = "<u> **ᴏᴡɴᴇʀ :**</u>\n"
     count = 0
     user = await app.get_users(OWNER_ID)
     user = user.first_name if not user.mention else user.mention
@@ -127,6 +127,6 @@ async def sudoers_list(_, message: Message):
             except Exception:
                 continue
     if not text:
-        await message.reply_text("» ɴᴏ sᴜᴅᴏ ᴜsᴇʀs ғᴏᴜɴᴅ.")
+        await message.reply_text("» ᴛɪᴅᴀᴋ ᴀᴅᴀ sᴜᴅᴏ ᴜsᴇʀ.")
     else:
         await hehe.edit_text(text)
