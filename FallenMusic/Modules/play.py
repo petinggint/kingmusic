@@ -66,7 +66,7 @@ from FallenMusic.Helpers.thumbnails import gen_qthumb, gen_thumb
     & ~filters.via_bot
 )
 async def play(_, message: Message):
-    fallen = await message.reply_text("» ᴘʀᴏᴄᴇssɪɴɢ, ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...")
+    fallen = await message.reply_text("» ᴘʀᴏsᴇs, ᴛᴏʟᴏɴɢ ᴛᴜɴɢɢᴜ...")
     try:
         await message.delete()
     except:
@@ -77,7 +77,7 @@ async def play(_, message: Message):
             get = await app.get_chat_member(message.chat.id, ASS_ID)
         except ChatAdminRequired:
             return await fallen.edit_text(
-                f"» ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ɪɴᴠɪᴛᴇ ᴜsᴇʀs ᴠɪᴀ ʟɪɴᴋ ғᴏʀ ɪɴᴠɪᴛɪɴɢ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}."
+                f"» sᴀʏᴀ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ᴀᴋsᴇs ᴜɴᴛᴜᴋ ɪɴᴠɪᴛᴇ ᴘᴇɴɢɢᴜɴᴀ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}."
             )
         if get.status == ChatMemberStatus.BANNED:
             unban_butt = InlineKeyboardMarkup(
@@ -91,7 +91,7 @@ async def play(_, message: Message):
                 ]
             )
             return await fallen.edit_text(
-                text=f"» {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ɪs ʙᴀɴɴᴇᴅ ɪɴ {message.chat.title}\n\n𖢵 ɪᴅ : `{ASS_ID}`\n𖢵 ɴᴀᴍᴇ : {ASS_MENTION}\n𖢵 ᴜsᴇʀɴᴀᴍᴇ : @{ASS_USERNAME}\n\nᴘʟᴇᴀsᴇ ᴜɴʙᴀɴ ᴛʜᴇ ᴀssɪsᴛᴀɴᴛ ᴀɴᴅ ᴘʟᴀʏ ᴀɢᴀɪɴ...",
+                text=f"» {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ɴʏᴀ ᴅɪ ʙᴀɴ {message.chat.title}\n\n𖢵 ɪᴅ : `{ASS_ID}`\n𖢵 ɴᴀᴍᴇ : {ASS_MENTION}\n𖢵 ᴜsᴇʀɴᴀᴍᴇ : @{ASS_USERNAME}\n\nᴛᴏʟᴏɴɢ ᴜɴʙᴀɴ ᴅᴀɴ ᴍᴜʟᴀɪ ʟᴀɢɪ...",
                 reply_markup=unban_butt,
             )
     except UserNotParticipant:
@@ -106,11 +106,11 @@ async def play(_, message: Message):
                 invitelink = await app.export_chat_invite_link(message.chat.id)
             except ChatAdminRequired:
                 return await fallen.edit_text(
-                    f"» ɪ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ɪɴᴠɪᴛᴇ ᴜsᴇʀs ᴠɪᴀ ʟɪɴᴋ ғᴏʀ ɪɴᴠɪᴛɪɴɢ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}."
+                    f"» sᴀʏᴀ ᴛɪᴅᴀᴋ ᴍᴇᴍɪʟɪᴋɪ ᴀᴋsᴇs ᴜɴᴛᴜᴋ ɪɴᴠɪᴛᴇ ᴘᴇɴɢɢᴜɴᴀ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}."
                 )
             except Exception as ex:
                 return await fallen.edit_text(
-                    f"ғᴀɪʟᴇᴅ ᴛᴏ ɪɴᴠɪᴛᴇ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}.\n\n**ʀᴇᴀsᴏɴ :** `{ex}`"
+                    f"ɢᴀɢᴀʟ ɪɴᴠɪᴛᴇ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}.\n\n**ʀᴇᴀsᴏɴ :** `{ex}`"
                 )
         if invitelink.startswith("https://t.me/+"):
             invitelink = invitelink.replace("https://t.me/+", "https://t.me/joinchat/")
@@ -127,7 +127,7 @@ async def play(_, message: Message):
             pass
         except Exception as ex:
             return await fallen.edit_text(
-                f"ғᴀɪʟᴇᴅ ᴛᴏ ɪɴᴠɪᴛᴇ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}.\n\n**ʀᴇᴀsᴏɴ :** `{ex}`"
+                f"ɢᴀɢᴀʟ ɪɴᴠɪᴛᴇ {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴛᴏ {message.chat.title}.\n\n**ʀᴇᴀsᴏɴ :** `{ex}`"
             )
         try:
             await app2.resolve_peer(invitelink)
@@ -142,9 +142,9 @@ async def play(_, message: Message):
     )
     url = get_url(message)
     if audio:
-        if round(audio.duration / 60) > DURATION_LIMIT:
+        if round(audio.duration / 7200) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴏɴ {BOT_NAME}."
+                f"» ᴍᴀᴀғ ᴋᴀᴋ, ᴅᴜʀᴀsɪ ɴʏᴀ ᴛᴇʀʟᴀʟᴜ ᴛɪɴɢɢɪ  {DURATION_LIMIT} ᴍᴇɴɪᴛ ᴀᴅᴀʟᴀʜ ᴅᴜʀᴀsɪ ᴍᴀᴋsɪᴍᴀʟ ɴʏᴀ {BOT_NAME}."
             )
 
         file_name = get_file_name(audio)
@@ -166,19 +166,19 @@ async def play(_, message: Message):
             secmul, dur, dur_arr = 1, 0, duration.split(":")
             for i in range(len(dur_arr) - 1, -1, -1):
                 dur += int(dur_arr[i]) * secmul
-                secmul *= 60
+                secmul *= 7200
 
         except Exception as e:
             return await fallen.edit_text(f"sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ\n\n**ᴇʀʀᴏʀ :** `{e}`")
 
-        if (dur / 60) > DURATION_LIMIT:
+        if (dur / 7200) > DURATION_LIMIT:
             return await fallen.edit_text(
-                f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴏɴ {BOT_NAME}."
+                f"» ᴍᴀᴀғ ᴋᴀᴋ, ᴅᴜʀᴀsɪ ɴʏᴀ ᴛᴇʀʟᴀʟᴜ ᴛɪɴɢɢɪ  {DURATION_LIMIT} ᴍᴇɴɪᴛ ᴀᴅᴀʟᴀʜ ᴅᴜʀᴀsɪ ᴍᴀᴋsɪᴍᴀʟ ɴʏᴀ {BOT_NAME}."
             )
         file_path = audio_dl(url)
     else:
         if len(message.command) < 2:
-            return await fallen.edit_text("» ᴡʜᴀᴛ ᴅᴏ ʏᴏᴜ ᴡᴀɴɴᴀ ᴘʟᴀʏ ʙᴀʙʏ ?")
+            return await fallen.edit_text("» ᴀᴘᴀ ʏᴀɴɢ ᴍᴀᴜ ᴋᴀᴍᴜ ᴍᴜʟᴀɪ ᴋᴀᴋ ?")
         await fallen.edit_text("🔎")
         query = message.text.split(None, 1)[1]
         try:
@@ -191,15 +191,15 @@ async def play(_, message: Message):
             secmul, dur, dur_arr = 1, 0, duration.split(":")
             for i in range(len(dur_arr) - 1, -1, -1):
                 dur += int(dur_arr[i]) * secmul
-                secmul *= 60
+                secmul *= 7200
 
         except Exception as e:
             LOGGER.error(str(e))
-            return await fallen.edit("» ғᴀɪʟᴇᴅ ᴛᴏ ᴘʀᴏᴄᴇss ᴏ̨ᴜᴇʀʏ, ᴛʀʏ ᴘʟᴀʏɪɴɢ ᴀɢᴀɪɴ...")
+            return await fallen.edit("» ɢᴀɢᴀʟ ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ᴀɴᴛʀɪᴀɴ, sɪʟᴀʜᴋᴀɴ ᴄᴏʙᴀ ʟᴀɢɪ...")
 
-        if (dur / 60) > DURATION_LIMIT:
+        if (dur / 7200) > DURATION_LIMIT:
             return await fallen.edit(
-                f"» sᴏʀʀʏ ʙᴀʙʏ, ᴛʀᴀᴄᴋ ʟᴏɴɢᴇʀ ᴛʜᴀɴ  {DURATION_LIMIT} ᴍɪɴᴜᴛᴇs ᴀʀᴇ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ᴛᴏ ᴘʟᴀʏ ᴏɴ {BOT_NAME}."
+                f"» ᴍᴀᴀғ ᴋᴀᴋ, ᴅᴜʀᴀsɪ ɴʏᴀ ᴛᴇʀʟᴀʟᴜ ᴛɪɴɢɢɪ  {DURATION_LIMIT} ᴍᴇɴɪᴛ ᴀᴅᴀʟᴀʜ ᴅᴜʀᴀsɪ ᴍᴀᴋsɪᴍᴀʟ ɴʏᴀ {BOT_NAME}."
             )
         file_path = audio_dl(url)
 
@@ -221,7 +221,7 @@ async def play(_, message: Message):
         qimg = await gen_qthumb(videoid, message.from_user.id)
         await message.reply_photo(
             photo=qimg,
-            caption=f"**➻ ᴀᴅᴅᴇᴅ ᴛᴏ ᴏ̨ᴜᴇᴜᴇ ᴀᴛ {position}**\n\n‣ **ᴛɪᴛʟᴇ :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` ᴍɪɴᴜᴛᴇs\n‣ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {ruser}",
+            caption=f"**➻ ᴍᴇɴᴀᴍʙᴀʜᴋᴀɴ ᴀɴᴛʀɪᴀɴ {position}**\n\n‣ **ᴛɪᴛʟᴇ :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n‣ **ᴅᴜʀᴀᴛɪᴏɴ :** `{duration}` ᴍɪɴᴜᴛᴇs\n‣ **ʀᴇǫᴜᴇsᴛᴇᴅ ʙʏ :** {ruser}",
             reply_markup=buttons,
         )
     else:
@@ -235,15 +235,15 @@ async def play(_, message: Message):
 
         except NoActiveGroupCall:
             return await fallen.edit_text(
-                "**» ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ғᴏᴜɴᴅ.**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ."
+                "**» ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ɴʏᴀ ᴍᴀᴛɪ.**\n\nᴛᴏʟᴏɴɢ ɴʏᴀʟᴀᴋᴀɴ ᴅᴀɴ ᴍᴜʟᴀɪ ʟᴀɢɪ."
             )
         except TelegramServerError:
             return await fallen.edit_text(
-                "» ᴛᴇʟᴇɢʀᴀᴍ ɪs ʜᴀᴠɪɴɢ sᴏᴍᴇ ɪɴᴛᴇʀɴᴀʟ ᴘʀᴏʙʟᴇᴍs, ᴘʟᴇᴀsᴇ ʀᴇsᴛᴀʀᴛ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ."
+                "» ᴛᴇʟᴇɢʀᴀᴍ sᴇᴅᴀɴɢ ᴀᴅᴀ ᴘʀᴏʙʟᴇᴍ ɪɴᴛᴇʀɴᴀʟ, ᴛᴏʟᴏɴɢ ʀᴇsᴛᴀʀᴛ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ɴʏᴀ sᴀɴ ᴍᴜʟᴀɪ ʟᴀɢɪ."
             )
         except UnMuteNeeded:
             return await fallen.edit_text(
-                f"» {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ɪs ᴍᴜᴛᴇᴅ ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ,\n\nᴘʟᴇᴀsᴇ ᴜɴᴍᴜᴛᴇ {ASS_MENTION} ᴏɴ ᴠɪᴅᴇᴏᴄʜᴀᴛ ᴀɴᴅ ᴛʀʏ ᴘʟᴀʏɪɴɢ ᴀɢᴀɪɴ."
+                f"» {BOT_NAME} ᴀssɪsᴛᴀɴᴛ ᴍᴜsɪᴄ ɴʏᴀ ᴅɪ ᴍᴜᴛᴇ,\n\nᴛᴏʟᴏɴɢ ᴜɴᴍᴜᴛᴇ {ASS_MENTION}."
             )
 
         imgt = await gen_thumb(videoid, message.from_user.id)
