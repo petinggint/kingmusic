@@ -55,9 +55,9 @@ async def ass_leaveall(_, message: Message):
             failed += 1
     try:
         await lear.edit_text(
-            f"<u>**» {ASS_MENTION} sᴜᴄᴄᴇssғᴜʟʟʏ ʟᴇғᴛ ᴄʜᴀᴛs :**</u>\n\n**ʟᴇғᴛ :** `{left}`\n**ғᴀɪʟᴇᴅ :** `{failed}`"
+            f"<u>**» {ASS_MENTION} ʙᴇʀʜᴀsɪʟ ᴋᴇʟᴜᴀʀ ɢʀᴏᴜᴘ :**</u>\n\n**ᴋᴇʟᴜᴀʀ :** `{left}`\n**ɢᴀɢᴀʟ :** `{failed}`"
         )
     except:
         await message.reply_text(
-            f"<u>**» {ASS_MENTION} sᴜᴄᴄᴇssғᴜʟʟʏ ʟᴇғᴛ ᴄʜᴀᴛs :**</u>\n\n**ʟᴇғᴛ :** `{left}`\n**ғᴀɪʟᴇᴅ :** `{failed}`"
+            f"<u>**» {ASS_MENTION} ʙᴇʀʜᴀsɪʟ ᴋᴇʟᴜᴀʀ ɢʀᴏᴜᴘ :**</u>\n\n**ᴋᴇʟᴜᴀʀ :** `{left}`\n**ɢᴀɢᴀʟ :** `{failed}`"
         )
