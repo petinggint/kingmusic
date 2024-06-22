@@ -58,7 +58,6 @@ async def ping_fallen(_, message: Message):
             [
                 [
                     InlineKeyboardButton(" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/kingmusicsupport"),
-                    ),
                 ],
             ]
         ),
